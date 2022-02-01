@@ -2,7 +2,7 @@
 COMPONENT=Frontend
 
 #we have to import from common .sh the output commands so
-#we have to give a source place for system to import so
+#we have to give a source place for system to import so we do
 
 source components/common.sh
 

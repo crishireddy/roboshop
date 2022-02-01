@@ -13,6 +13,10 @@ USER_ID=$(id -u)
 
 if [ "$USER_ID" -ne 0 ]; then
   echo -e "\e[31mYou must be a root user to execute this script\e[0m"
+  exit 1
 fi
 
 #if user id not equal to 0 then echo. as user id for root is always 0
+#if we dont give exit status it wont stop at you must be root, and give content
+#from cart or cata or front etc. to stop at at root user message you
+#have to tell system to exit if t finds error (not user)

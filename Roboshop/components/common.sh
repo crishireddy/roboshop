@@ -20,3 +20,16 @@ fi
 #if we dont give exit status it wont stop at you must be root, and give content
 #from cart or cata or front etc. to stop at at root user message you
 #have to tell system to exit if t finds error (not user)
+
+
+# I just want to go with a function which is
+
+
+Print() {
+  echo "\e[1m $(date +%c) \e[35m$(hostname)\e[0m \e[1;36m${COMPONENT} :: $1"
+}
+
+#in the above 1st print fuction we are calling for component variable so
+#we give in frontend and finally the first argument passed to print st::
+#so above is common for all script to display result when we pull
+# and print function is called in .sh folders (cart,cata,front,mongodb etc..)

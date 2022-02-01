@@ -26,7 +26,7 @@ fi
 
 
 Print() {
-  echo "\e[1m $(date +%c) \e[35m$(hostname)\e[0m \e[1;36m${COMPONENT} :: $1"
+  echo -e "\e[1m $(date +%c) \e[35m$(hostname)\e[0m \e[1;36m${COMPONENT} :: $1"
 }
 
 #in the above 1st print fuction we are calling for component variable so

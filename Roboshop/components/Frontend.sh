@@ -4,7 +4,7 @@ COMPONENT=Frontend
 #we have to import from common .sh the output commands so
 #we have to give a source place for system to import so
 
-source common.sh
+source components/common.sh
 
 Print "Installing Nginx"
 #yum install nginx -y

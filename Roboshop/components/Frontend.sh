@@ -1,5 +1,6 @@
 #!/bin/bash
-COMPONENT=Frontend
+
+components=Frontend
 
 #we have to import from common .sh the output commands so
 #we have to give a source place for system to import so we do
@@ -23,9 +24,9 @@ Stat $?
 
 
 cd/usr/share/nginx/html
-exit 2
 
-rm -rf *
+
+rm -rf*
 unzip /tmp/frontend.zip
 mv frontend-main/* .
 mv static/* .

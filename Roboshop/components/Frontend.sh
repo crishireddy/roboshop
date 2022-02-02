@@ -6,12 +6,12 @@ COMPONENT=Frontend
 
 source components/common.sh
 
-Print "Installing Nginx" "Yum install nginx -y"
+Print "Installing Nginx" " Yum install nginx -y "
 yum install nginx -y
 Stat $?
 #stat $? stat function we will make in common and $? is a exit status of our yum command
 #
-Print "Starting Nginx Service" "Systemctl enable nginx"
+Print "Starting Nginx Service" " Systemctl enable nginx "
 exit
 systemctl enable nginx
 systemctl start nginx

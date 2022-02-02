@@ -36,7 +36,7 @@ fi
 
 Print() {
   echo -e "[\e[1;34mInfo\e[0m] ------------< $1 >-------------------------"
-  echo -e "[\e[1;34mInfo\e[0m]\e[1m $2 \e[0m"
+  echo -e "[\e[1;34mInfo\e[0m]\e[1; $2 \e[0m"
   echo -e "[\e[1;
     34mInfo\e[0m
     ]------------------------------------------------"
@@ -48,9 +48,9 @@ Stat () {
     34mInfo\e[0m
     ]------------------------------------------------"
     if [ "$1" -eq 0 ]; then
-      echo -e "[\e[1; 34minfo\e[0m] \e[1;SUCCESS \e[0m"
+      echo -e "[\e[1;34minfo\e[0m] \e[1;32mSUCCESS \e[0m"
     else
-      echo -e "[\e[1; 31minfo\e[0m] \e[1;Failure \e[0m"
+      echo -e "[\e[1;34minfo\e[0m] \e[1;31mFailure \e[0m"
     fi
  echo -e "[\e[1;
         34mInfo\e[0m

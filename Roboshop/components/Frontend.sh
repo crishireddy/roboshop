@@ -6,16 +6,23 @@ COMPONENT=Frontend
 
 source components/common.sh
 
-Print "Installing Nginx" "yum install nginx -y"
+Print "Installing Nginx" "Yum install nginx -y"
 yum install nginx -y
 Stat $?
-#stat $? stat functon we will make in common and $? is a exit status of our yum command
+#stat $? stat function we will make in common and $? is a exit status of our yum command
 #
-Print "Starting Nginx Service" "systemctl enable nginx"
+Print "Starting Nginx Service" "Systemctl enable nginx"
 exit
 systemctl enable nginx
 systemctl start nginx
+Stat $?
+
+Print "Downloading Frontend content" ' curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"'
+
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+Stat $?
+
+
 cd /usr/share/nginx/html
 rm -rf *
 unzip /tmp/frontend.zip

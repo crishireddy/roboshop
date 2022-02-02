@@ -20,8 +20,8 @@ Print "Downloading Frontend content" 'curl -s -L -o /tmp/frontend.zip "https://g
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 Stat $?
 
-cd/usr/share/nginx/html
-rm -rf/*
+cd /usr/share/nginx/html
+rm -rf *
 unzip /tmp/frontend.zip
 mv frontend-main/* .
 mv static/* .

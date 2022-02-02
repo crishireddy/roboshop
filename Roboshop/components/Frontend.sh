@@ -15,7 +15,7 @@ Stat $?
 Print "Starting Nginx Service" "systemctl start nginx"
 exit
 systemctl enable nginx
-systemctl start nginx
+# start nginx
 Stat $?
 
 Print "Downloading Frontend content" 'curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"'

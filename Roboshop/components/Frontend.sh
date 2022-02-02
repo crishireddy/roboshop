@@ -24,6 +24,8 @@ Stat $?
 
 
 cd /usr/share/nginx/html
+exit 2
+
 rm -rf *
 unzip /tmp/frontend.zip
 mv frontend-main/* .

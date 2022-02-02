@@ -1,6 +1,5 @@
 #!/bin/bash
-
-components=Frontend
+#COMPONENT=Frontend
 
 #we have to import from common .sh the output commands so
 #we have to give a source place for system to import so we do
@@ -8,14 +7,13 @@ components=Frontend
 source components/common.sh
 
 Print "Installing Nginx" " Yum install nginx -y "
-yum install nginx -y
+yumm install nginx -y
 Stat $?
 #stat $? stat function we will make in common and $? is a exit status of our yum command
 #
 Print "Starting Nginx Service" "systemctl start nginx"
-exit
 systemctl enable nginx
-# start nginx
+start nginx
 Stat $?
 
 Print "Downloading Frontend content" 'curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"'
@@ -23,7 +21,6 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/fron
 Stat $?
 
 cd/usr/share/nginx/html
-
 rm -rf*
 unzip /tmp/frontend.zip
 mv frontend-main/* .

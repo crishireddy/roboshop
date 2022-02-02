@@ -25,11 +25,17 @@ fi
 # I just want to go with a function which is
 
 
-Print() {
-  echo -e "\e[1m $(date +%c) \e[35m$(hostname)\e[0m \e[1;36m${COMPONENT}\e[0m :: $1"
-}
+#Print() {
+ # echo -e "\e[1m $(date +%c) \e[35m$(hostname)\e[0m \e[1;36m${COMPONENT}\e[0m :: $1"
+#}
 
-#in the above 1st print fuction we are calling for component variable so
+#in the above 1st print function we are calling for component variable so
 #we give in frontend and finally the first argument passed to print st::
 #so above is common for all script to display result when we pull
 # and print function is called in .sh folders (cart,cata,front,mongodb etc..)
+
+Print() {
+  echo -e "[\e[1;34mInfo\e[0m] ------------< $1 >-------------------------"
+  echo -e "[\e[1;34mInfo\e[0m]\e[1m $2 \e[0m"
+  echo -e "[\e[1;34mInfo\e[0m]------------------------------------------------"
+}

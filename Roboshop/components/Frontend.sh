@@ -23,7 +23,7 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/fron
 Stat $?
 
 
-cd /usr/share/nginx/html
+cd/usr/share/nginx/html
 exit 2
 
 rm -rf *

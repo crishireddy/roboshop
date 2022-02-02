@@ -7,13 +7,13 @@
 source components/common.sh
 
 Print "Installing Nginx" " Yum install nginx -y "
-yumm install nginx -y
+yum install nginx -y
 Stat $?
 #stat $? stat function we will make in common and $? is a exit status of our yum command
 #
 Print "Starting Nginx Service" "systemctl start nginx"
 systemctl enable nginx
-start nginx
+systemctl start nginx
 Stat $?
 
 Print "Downloading Frontend content" 'curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"'

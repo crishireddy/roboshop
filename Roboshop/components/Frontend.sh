@@ -20,15 +20,23 @@ Print "Downloading Frontend content" 'curl -s -L -o /tmp/frontend.zip "https://g
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 Stat $?
 
-cd /usr/share/nginx/html
+Print "Remove old docs and download Roboshop web"
+
+cd/usr/share/nginx/html
+rm -rf *
 Stat $?
 
-rm -rf *
+Print "Exract Roboshop Frontend Docs" "unzip /tmp/frontend.zip"
 unzip /tmp/frontend.zip
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-master README.md
+Print "setup Nginx confg for Roboshop"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
+
+Print "starting nginx service"
+systemctl enable nginx
+systemctl restart nginx
 
 #this is the main script, the only Problem with this script is if any one command fails insted of stopping it
 #will jump into nexet command to avoid that use set -e at the first.

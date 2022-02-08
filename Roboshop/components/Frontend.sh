@@ -21,7 +21,7 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/fron
 Stat $?
 
 Print "Remove old docs and download Roboshop web"
-cd/usr/share/nginx/html
+cd /usr/share/nginx/html
 rm -rf*
 Stat $?
 

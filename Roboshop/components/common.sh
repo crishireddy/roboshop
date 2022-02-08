@@ -51,3 +51,5 @@ Stat() {
  echo -e "[\e[1;34mInfo\e[0m]------------------------------------------------"
 
 }
+#in Stat function we are saying if argument 1 "Installing nginx "
+#is successful equal to 0(-eq 0) then echo success else failure

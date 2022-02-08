@@ -22,7 +22,7 @@ Stat $?
 
 Print "Remove old docs and download Roboshop web"
 cd /usr/share/nginx/html
-rm -rf*
+rm -rf *
 Stat $?
 
 Print "Exract Roboshop Frontend Docs" "unzip /tmp/frontend.zip"

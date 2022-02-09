@@ -25,7 +25,7 @@ export IPADDRESS
 
 envsubst <record.json>/tmp/${component}.json
 
-#aws route53 change-resource-record-sets --hosted-zone-id Z04333592ORFI60SA0ANN --change-batch file:///tmp/${component}.json
+aws route53 change-resource-record-sets --hosted-zone-id Z04333592ORFI60SA0ANN --change-batch file:///tmp/${component}.json
 
 #the above command is used to create a route id just like instance.
 

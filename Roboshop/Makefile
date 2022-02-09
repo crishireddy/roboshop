@@ -9,8 +9,8 @@ catalogue: common ##Install catalogue component
 Frontend: common ##Istall Frontend component
 	@sh	components/Frontend.sh
 
-MongoDB: common ##Istall MongoDB component
-	@sh	components/MongoDb.sh
+mongodb: common ##Istall MongoDB component
+	@sh	components/mongodb.sh
 
  #cart:
  #	@sudo sh	components/cart.sh

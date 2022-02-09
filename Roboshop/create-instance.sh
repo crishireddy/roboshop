@@ -9,7 +9,7 @@ fi
 
 STATE=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${component}" --query "Reservations[*].Instances[*].State.Name" --output text)
 
-if [ STATE != "running" ]; then
+if [ $STATE != "running" ]; then
 aws ec2 run-instances --launch-template LaunchTemplateId=lt-0aa25e272bc927222 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${component}}]"
 fi
 # reason for the above command states tat when we already have a instance with a name running
@@ -23,7 +23,7 @@ IPADDRESS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=${compone
 export component
 export IPADDRESS
 
-envsubt <record.json>/tmp/${component}.json
+envsubst <record.json>/tmp/${component}.json
 
 #aws route53 change-resource-record-sets --hosted-zone-id Z04333592ORFI60SA0ANN --change-batch file:///tmp/${component}.json
 

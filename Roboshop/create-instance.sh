@@ -14,7 +14,7 @@ if [ "$STATE" != "running" ]; then
   sleep 15
 fi
 # reason for the above command states tat when we already have a instance with a name running
-#please fail to create another instance with same name, in the -z we ask to run a statemnet
+#please fail to create another instance with same name, in the -z we ask to run a statement
 #and give name to it like fronted or mongodb... etc in stat statement we are saying when
 #status is not equal (!=) to running then create that instance with that name.
 #ex we have instance frontend its stat is running

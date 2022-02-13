@@ -7,7 +7,7 @@ yum install nodejs make gcc-c++ -y
 stat $?
 
 Print "adding roboshop user" "useradd roboshop"
-id roboshop || useradd roboshop
+id roboshop
 stat $?
 
 print "downloading catalogue component" "curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip""

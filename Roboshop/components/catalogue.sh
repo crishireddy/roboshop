@@ -2,24 +2,25 @@
 
 source components/common.sh
 
-Print "Installing nodejs" " install nodejs make gcc-c++ -Y "
+Print "yum install Nodejs" "yum install nodejs make gcc-c++ -y "
 yum install nodejs make gcc-c++ -y
-Stat $?
+stat $?
 
-Print "Adding roboshop Project user" "useradd roboshop"
+Print "adding roboshop user" "useradd roboshop"
 id roboshop || useradd roboshop
-Stat $?
+stat $?
 
-Print "Download Catalogue component code" " curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+print "downloading catalogue component" "curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip""
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
-Stat $?
+stat $?
 
-Print "Extract catalogue component code rm -rf /home/roboshop/catalogue && mkdir -p /home/roboshop/catalogue && cd /home/roboshop/catalogue && unzip /tmp/catalogue.zip && mv catalogue-main catalogue && cd /home/roboshop/catalogue
-rm -rf /home/roboshop/catalogue && mkdir -p /home/roboshop/catalogue && cd /home/roboshop/catalogue && unzip /tmp/catalogue.zip && mv catalogue-main catalogue && cd /home/roboshop/catalogue
-Stat $?
+print "extracting roboshop components" "cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main catalogue && cd /home/roboshop/catalogue"
+rm -rf /home/roboshop/catalogue && cd /home/roboshop && unzip /tmp/catalogue.zip && mv catalogue-main catalogue && cd /home/roboshop/catalogue
+stat $?
+
 exit
 
-$ npm install
+npm install
 
 mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload
